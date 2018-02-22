@@ -1,0 +1,102 @@
+% !TeX spellcheck = de_DE
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass[aspectratio=169]{beamer
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{bookman}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{verbatimbox}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright}
+
+\usepackage[round]{natbib}
+\bibpunct[: ]{(}{)}{;}{a}{}{,}
+
+\usetheme{Singapore}
+\usecolortheme{default}
+
+\inputencoding{utf8}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+  
+\definecolor{blue}{HTML}{00376c}
+\setbeamercolor{itemize item}{fg=blue}
+\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamercolor{alerted text}{fg=blue}
+\setbeamercolor{enumerate item}{fg=black}
+\setbeamercolor{caption name}{fg=black}
+\setbeamercolor{title}{fg=blue}
+\setbeamercolor{frametitle}{fg=blue}
+\setbeamercolor{structure}{fg=blue}
+
+\setbeamertemplate{headline}{
+	\begin{beamercolorbox}[wd=0.9\paperwidth, left]{section in head/foot}
+		\insertnavigation{0.9\paperwidth}  		\vskip-18pt
+	\end{beamercolorbox} 
+	\hfill
+	\begin{beamercolorbox}[wd=0.09\paperwidth, right]{section in head/foot}
+			\vskip2pt	\includegraphics[scale=.06]{husiegel.png} \hskip2pt	
+	\end{beamercolorbox}   }
+
+\setbeamertemplate{footline}{\hbox{
+	\begin{beamercolorbox}[wd=0.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+		\insertshortauthor  
+    \end{beamercolorbox}
+ 	\begin{beamercolorbox}[wd=0.4\paperwidth, center]{section in head/foot}
+		\insertshorttitle
+	 \end{beamercolorbox} 
+	\begin{beamercolorbox}[wd=0.3\paperwidth, center]{section in head/foot}
+		\insertpagenumber /\insertpresentationendpage
+	\end{beamercolorbox} 
+}}
+
+
+
+\author{Maik Hamjediers}
+%\author[shortname]{author1 \inst{1} \and author2 \inst{2}}
+\institute{\normalsize Institut für Sozialwissenschaften}
+%\institute[shortinst]{\inst{1} affiliation for author1 \and \inst{2} affiliation for author2}
+
+\title[Template]{\Large \textsc{Template}}
+\subtitle{\large Template}
+\date{\scriptsize \today}
+
+
+\begin{document}
+
+\makeatletter
+\let\old@beamer@writeslidentry\beamer@writeslidentry
+\def\beamer@writeslidentry{%
+	\expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+	{%else
+		\clearpage\beamer@notesactions%
+	}
+}
+\makeatother
+\begin{frame}[plain, t]
+	\hfill \includegraphics[scale=.1]{husiegel.png}
+	\vspace{-15pt} 
+	\titlepage
+\end{frame}
+
+\makeatletter
+\let\beamer@writeslidentry\old@beamer@writeslidentry
+\makeatother
+
+\section{Überblick}
+\subsection*{}
+\begin{frame}{Template}
+
+\end{frame}
+
+\end{document}
